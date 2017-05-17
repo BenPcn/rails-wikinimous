@@ -1,0 +1,23 @@
+
+<%= form_for@article do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title"  %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control ", placeholder: "Content", rows: "10" %>
+  </div>
+  <%= f.submit class: 'btn btn-default btn-primary' %>
+<% end %>
+<br>
+
+
+<div id="editor">
+</div>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+</script>
+
+
